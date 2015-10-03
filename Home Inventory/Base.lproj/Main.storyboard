@@ -246,7 +246,7 @@
         <!--Edit Profile-->
         <scene sceneID="Ld1-Qh-k78">
             <objects>
-                <viewController title="Edit Profile" id="Tdz-Et-Luj" sceneMemberID="viewController">
+                <viewController title="Edit Profile" id="Tdz-Et-Luj" customClass="EditProfileSwiftController" customModule="Home_Inventory" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qhY-dr-5Aa"/>
                         <viewControllerLayoutGuide type="bottom" id="gn5-5H-C8Y"/>
@@ -270,6 +270,18 @@
                                         <exclude reference="JjR-sR-d4H"/>
                                     </mask>
                                 </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqJ-f0-G1W">
+                                <rect key="frame" x="20" y="270" width="30" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="7mZ-Eb-H36"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="WiR-JV-7oU"/>
+                                    <constraint firstAttribute="width" constant="30" id="ngl-Gz-D0x"/>
+                                    <constraint firstAttribute="height" constant="21" id="sO9-Sp-CIw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mdc-GV-5Kh">
                                 <rect key="frame" x="20" y="156" width="68" height="21"/>
@@ -358,16 +370,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtj-3N-Yza">
-                                <rect key="frame" x="126" y="232" width="178" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="178" id="GGG-51-gEW"/>
-                                    <constraint firstAttribute="height" constant="30" id="MMn-GJ-OQa"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ivc-TC-cxv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="elM-0u-7m8">
                                 <rect key="frame" x="126" y="270" width="178" height="30"/>
                                 <constraints>
@@ -385,19 +387,20 @@
                                     <constraint firstAttribute="height" constant="30" id="bs9-pK-owK"/>
                                 </constraints>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="profileButton:" destination="Tdz-Et-Luj" eventType="touchUpInside" id="mst-LH-y2H"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lqJ-f0-G1W">
-                                <rect key="frame" x="20" y="270" width="30" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtj-3N-Yza">
+                                <rect key="frame" x="126" y="232" width="178" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="30" id="7mZ-Eb-H36"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="WiR-JV-7oU"/>
-                                    <constraint firstAttribute="width" constant="30" id="ngl-Gz-D0x"/>
-                                    <constraint firstAttribute="height" constant="21" id="sO9-Sp-CIw"/>
+                                    <constraint firstAttribute="width" constant="178" id="GGG-51-gEW"/>
+                                    <constraint firstAttribute="height" constant="30" id="MMn-GJ-OQa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="ivc-TC-cxv"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -431,6 +434,14 @@
                             <constraint firstItem="kqE-yQ-7F9" firstAttribute="leading" secondItem="lbR-en-YEo" secondAttribute="leadingMargin" constant="235" id="trj-R5-iPp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityField" destination="aSz-eL-JVe" id="PPw-e9-ZPU"/>
+                        <outlet property="firstNameField" destination="vXs-hd-cs8" id="yLg-hL-idr"/>
+                        <outlet property="lastNameField" destination="fpt-89-Hjl" id="Hnb-q8-78E"/>
+                        <outlet property="stateField" destination="mtj-3N-Yza" id="Iah-Zn-eom"/>
+                        <outlet property="streetAddressField" destination="XvS-bn-uca" id="etc-Ip-nD9"/>
+                        <outlet property="zipField" destination="elM-0u-7m8" id="uLQ-b0-fDO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vB7-Ad-r8H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
