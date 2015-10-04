@@ -91,29 +91,53 @@ class EditProfileSwiftController: UIViewController {
         let appDel: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let context: NSManagedObjectContext = appDel.managedObjectContext
         
-        let fName:String = String(firstNameField.text!)
-        let lName:String = String(lastNameField.text!)
-        let address:String = String(streetAddressField.text!)
-        let city:String = String(cityField.text!)
-        let state:String = String(stateField.text!)
-        let zip:String = String(zipField.text!)
+        let request = NSFetchRequest(entityName: "Profile")
         
-        var newUser = NSEntityDescription.insertNewObjectForEntityForName("Profile", inManagedObjectContext: context)
+        request.returnsObjectsAsFaults = false
         
-        newUser.setValue(fName, forKey: "fName")
-        newUser.setValue(lName, forKey: "lName")
-        newUser.setValue(address, forKey: "address")
-        newUser.setValue(city, forKey: "city")
-        newUser.setValue(state, forKey: "state")
-        newUser.setValue(zip, forKey: "zip")
+//        let fName:String = String(firstNameField.text!)
+//        let lName:String = String(lastNameField.text!)
+//        let address:String = String(streetAddressField.text!)
+//        let city:String = String(cityField.text!)
+//        let state:String = String(stateField.text!)
+//        let zip:String = String(zipField.text!)
         
         do {
-            try context.save()
+            let results = try context.executeFetchRequest(request)
+            
+            if (results.count > 0) {
+                
+                for result in results as! [NSManagedObject] {
+                    if let fname:String = result.valueForKey("fName") as? String { // cast username as String so we can use it.
+                        result.setValue(String(firstNameField.text!), forKey: "fName")
+                    }
+                    if let lname = result.valueForKey("lName") as? String { // cast username as String so we can use it.
+                        result.setValue(String(lastNameField.text!), forKey: "lName")
+                    }
+                    if let address = result.valueForKey("address") as? String { // cast username as String so we can use it.
+                        result.setValue(String(streetAddressField.text!), forKey: "address")
+                    }
+                    if let city = result.valueForKey("city") as? String { // cast username as String so we can use it.
+                        result.setValue(String(cityField.text!), forKey: "city")
+                    }
+                    if let state = result.valueForKey("state") as? String { // cast username as String so we can use it.
+                        result.setValue(String(stateField.text!), forKey: "state")
+                    }
+                    if let zip = result.valueForKey("zip") as? String { // cast username as String so we can use it.
+                        result.setValue(String(zipField.text!), forKey: "zip")
+                    }
+                }
+                
+                do {
+                    try context.save()
+                } catch {
+                    print("something went wroing")
+                }
+                
+            }
         } catch {
-            print("Something went wrong")
+            print("something went wrong")
         }
-        
-        
     }
     
     

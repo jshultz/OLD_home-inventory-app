@@ -397,6 +397,7 @@
                                 <state key="normal" title="Submit"/>
                                 <connections>
                                     <action selector="profileButton:" destination="Tdz-Et-Luj" eventType="touchUpInside" id="mst-LH-y2H"/>
+                                    <segue destination="8rJ-Kc-sve" kind="show" id="foq-Yp-LAU"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mtj-3N-Yza">
@@ -609,4 +610,7 @@
     <resources>
         <image name="first" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="foq-Yp-LAU"/>
+    </inferredMetricsTieBreakers>
 </document>
