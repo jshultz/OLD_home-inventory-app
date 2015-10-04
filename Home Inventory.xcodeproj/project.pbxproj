@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE33A8771BC089BD0021709B /* EditProfileSwiftController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE33A8761BC089BD0021709B /* EditProfileSwiftController.swift */; settings = {ASSET_TAGS = (); }; };
+		DE6883161BC19DAC00A88583 /* HomeInventory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DE6883141BC19DAC00A88583 /* HomeInventory.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		DE8A38201BBF395F006F77F6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A381F1BBF395F006F77F6 /* AppDelegate.swift */; };
 		DE8A38221BBF395F006F77F6 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A38211BBF395F006F77F6 /* FirstViewController.swift */; };
 		DE8A38241BBF395F006F77F6 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE8A38231BBF395F006F77F6 /* SecondViewController.swift */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		DE33A8761BC089BD0021709B /* EditProfileSwiftController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditProfileSwiftController.swift; sourceTree = "<group>"; };
+		DE6883151BC19DAC00A88583 /* HomeInventory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = HomeInventory.xcdatamodel; sourceTree = "<group>"; };
 		DE8A381C1BBF395E006F77F6 /* Home Inventory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Home Inventory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE8A381F1BBF395F006F77F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DE8A38211BBF395F006F77F6 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -42,6 +44,7 @@
 		DE8A38131BBF395E006F77F6 = {
 			isa = PBXGroup;
 			children = (
+				DE6883141BC19DAC00A88583 /* HomeInventory.xcdatamodeld */,
 				DE8A381E1BBF395E006F77F6 /* Home Inventory */,
 				DE8A381D1BBF395E006F77F6 /* Products */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE6883161BC19DAC00A88583 /* HomeInventory.xcdatamodeld in Sources */,
 				DE8A38241BBF395F006F77F6 /* SecondViewController.swift in Sources */,
 				DE8A38201BBF395F006F77F6 /* AppDelegate.swift in Sources */,
 				DE33A8771BC089BD0021709B /* EditProfileSwiftController.swift in Sources */,
@@ -294,6 +298,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DE6883141BC19DAC00A88583 /* HomeInventory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DE6883151BC19DAC00A88583 /* HomeInventory.xcdatamodel */,
+			);
+			currentVersion = DE6883151BC19DAC00A88583 /* HomeInventory.xcdatamodel */;
+			path = HomeInventory.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DE8A38141BBF395E006F77F6 /* Project object */;
 }
