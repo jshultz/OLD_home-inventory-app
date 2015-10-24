@@ -95,13 +95,6 @@ class EditProfileSwiftController: UIViewController {
         
         request.returnsObjectsAsFaults = false
         
-//        let fName:String = String(firstNameField.text!)
-//        let lName:String = String(lastNameField.text!)
-//        let address:String = String(streetAddressField.text!)
-//        let city:String = String(cityField.text!)
-//        let state:String = String(stateField.text!)
-//        let zip:String = String(zipField.text!)
-        
         do {
             let results = try context.executeFetchRequest(request)
             
